@@ -1,0 +1,212 @@
+* { 
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+:root { 
+    /* body background color*/
+    --BODY_BackgroundColor: hsl(225, 100%, 94%, 0.5);
+    /* summary card style's value */
+    --SUMMARYCARD_BackgroundColor: hsl(225, 100%, 98%);
+    --SUMMARYCARD_Wdith: 390px;
+    --SUMMARYCARD_Height: 550px;
+    --SUMMARYCARD_Radius: 15px;
+    --SUMMARYCARD_TOP: 68%;
+    /* backgroundImage style value */
+    --BACKGROUNDIMAGE_height: 73%;
+    /* padding left and rgiht value */
+    --PADDING: 30px;
+}
+
+body { 
+    background-color: var(--BODY_BackgroundColor);
+    width: 100%;
+    height: 100vh;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+main { 
+    width: 100%;
+    height: 100%;
+}
+
+.summary-card { 
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
+    background-color: var(--SUMMARYCARD_BackgroundColor);
+    width: var(--SUMMARYCARD_Wdith);
+    height: var(--SUMMARYCARD_Height);
+    border-radius: var(--SUMMARYCARD_Radius);
+
+    box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+}
+
+.Top-side-of-card { 
+    width: 100%;
+}
+
+.Top-side-of-card img { 
+    width: var(--SUMMARYCARD_Wdith);
+    border-top-right-radius: var(--SUMMARYCARD_Radius);
+    border-top-left-radius: var(--SUMMARYCARD_Radius);
+}
+
+.summary { 
+    padding: 20px var(--PADDING) 0 var(--PADDING);
+}
+
+.summary h1 { 
+    color: hsl(223, 47%, 23%);
+    text-align: center;
+    font-size: 25px;
+    text-transform: capitalize; 
+}
+
+.summary p { 
+    color: hsl(223, 47%, 23%);
+    margin-top: 10px;
+    text-align: center;
+}
+
+.pleyMusic { 
+    padding: 30px var(--PADDING) 0 var(--PADDING);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.peyment { 
+    display: flex;
+}
+
+.peyment_price { 
+    margin-left: 20px;
+    height: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.peyment_price p { 
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.peyment_price small { 
+    color: hsl(223, 47%, 23%);
+    font-size: 16px; 
+}
+
+.change { 
+    text-transform: capitalize;
+    text-decoration: underline;
+    color: hsl(245, 75%, 52%);
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.change:hover { 
+    color: hsl(224, 23%, 55%);
+}
+
+.buttons { 
+    padding: 30px var(--PADDING) 0px var(--PADDING);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons button { 
+    text-transform: capitalize;
+    border: none;
+    display: flex;
+
+    cursor: pointer;
+}
+
+.proceed { 
+    background-color: hsl(245, 75%, 52%);
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+    font-weight: 700;
+    color: hsl(225, 100%, 94%);
+}
+
+.proceed:hover { 
+    opacity: 0.8;
+}
+
+.cancel { 
+    color: grey;
+    background-color: var(--SUMMARYCARD_BackgroundColor);
+    margin-top: 10px;
+
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 18px;
+}
+
+.cancel:hover { 
+    color: black;
+}
+
+
+
+
+/* for scree background image */
+@media (min-width: 370px) {
+    .backgroundImage { 
+        position: relative;
+        width: 100%;
+        height: var(--BACKGROUNDIMAGE_height);
+        background-image: url("images/pattern-background-desktop.svg");
+        background-repeat: no-repeat;
+        background-size: 100% var(--BACKGROUNDIMAGE_height);
+    }
+}
+
+/* for mobile background image  and style PX: 375*/
+@media (max-width: 375px) {
+
+    .summary-card { 
+        top: 70%;
+        width: 340px; 
+        height: 550px;
+    }
+
+
+    .Top-side-of-card img { 
+        width: 340px; 
+    }
+
+    .backgroundImage { 
+        position: relative;
+        width: 100%;
+        height: 70%;
+        background-image: url("images/pattern-background-mobile.svg");
+        background-repeat: no-repeat;
+        background-size: 100% 70%;
+    }
+}
